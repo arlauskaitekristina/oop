@@ -1,7 +1,6 @@
 public class Main {
     public static void main(String[] args) {
 
-        //interfaceFamilyTree familyTreePetrov = new FamilyTree();
         FamilyTree familyTreeSmirnov = new FamilyTree();
 
         Human human1 = new Human("Дмитрий Смирнов", TypeGender.Male);
