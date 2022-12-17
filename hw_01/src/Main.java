@@ -1,22 +1,21 @@
 public class Main {
     public static void main(String[] args) {
-
-        FamilyTree familyTreeSmirnov = new FamilyTree();
+        FamilyTree <Human> familyTreeSmirnov = new FamilyTree<>();
 
         Human human1 = new Human("Дмитрий Смирнов", TypeGender.Male);
         Human human2 = new Human("Ирина Смирнова", TypeGender.Female);
         Human human3 = new Human("Арина Смирнова", TypeGender.Female);
 
-        familyTreeSmirnov.addHuman(human1);
-        familyTreeSmirnov.addHuman(human2);
-        familyTreeSmirnov.addHuman(human3);
+        familyTreeSmirnov.add(human1);
+        familyTreeSmirnov.add(human2);
+        familyTreeSmirnov.add(human3);
 
         human1.addCommunication(human3, TypeCommunication.Daughter);
         human2.addCommunication(human3, TypeCommunication.Daughter);
 
         human1.showCommunication(TypeCommunication.Daughter);
-        familyTreeSmirnov.findHuman(human1);
-        familyTreeSmirnov.findHuman(human2);
+        familyTreeSmirnov.find(human1);
+        familyTreeSmirnov.find(human2);
 
         System.out.println(familyTreeSmirnov);
     }
