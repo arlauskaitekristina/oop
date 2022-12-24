@@ -1,5 +1,6 @@
 package model;
 
-public interface Saveable {
+public interface ISave {
     public void saveAs(String str);
 }
+

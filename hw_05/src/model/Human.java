@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Human {
+public class Human implements Item {
 
     private int id;
     private String surname;
@@ -12,7 +12,7 @@ public class Human {
     private int age;
     private List<Relationship> relationships;
 
-    public Human(List<Human> list,String surname, String name, int age) {
+    public Human(List<Item> list, String surname, String name, int age) {
         this.id = setId(list);
         this.surname = surname;
         this.name = name;
@@ -26,12 +26,12 @@ public class Human {
         return id;
     }
 
-    private int setId(List<Human> list) {
-        int upperRange = 100;
+    private int setId(List<Item> list) {
+        int upperRange = 50;
         Random random = new Random();
         int tempId = random.nextInt(upperRange);
         for (int i = 0; i < list.size(); i++){
-            if (list.get(i).id == tempId){
+            if (list.get(i).getId() == tempId){
                 tempId++;
                 i = 0;
             }
@@ -50,6 +50,7 @@ public class Human {
     public void setSurname(String surname) {
         this.surname = surname;
     }
+
     public String getName() {
         return name;
     }
@@ -70,12 +71,12 @@ public class Human {
         return relationships;
     }
 
-    public String humanToString(Human human){
+    public String itemToString(){
         String res = "";
-        res = "id человека: " + human.id + "\n" + "Фамилия человека: " + human.surname + "\n" + "Имя человека: " + human.name + "\n" +
-                "Возраст человека: " + human.age +"\n" + "Связи человека: " + "\n";
-        if (human.relationships != null){
-            for (Relationship r : human.relationships){
+        res = "id человека: " + this.id + "\n" + "Фамилия человека: " + this.surname + "\n" + "Имя человека: " + this.name + "\n" +
+                "Возраст человека: " + this.age +"\n" + "Связи человека: " + "\n";
+        if (this.relationships != null){
+            for (Relationship r : this.relationships){
                 res = res + "C человеком " + "id которого: " + r.getRelationToHumanId() +
                         " существует связь - " + r.getRelation() + "\n";
             }
@@ -83,10 +84,10 @@ public class Human {
         return res;
     }
 
-    public String childrensToString(Human human){
+    public String childrensToString(){
         String res = "";
-        if (human.relationships != null){
-            for (Relationship r : human.relationships){
+        if (this.relationships != null){
+            for (Relationship r : this.relationships){
                 if (r.getRelationId() == 2){
                     res = res + "Id ребенка: " + r.getRelationToHumanId();
                 }
@@ -95,14 +96,14 @@ public class Human {
         return res;
     }
 
-    public void setRelationship(Human human,Relationship relationship) {
-        if (human.relationships == null){
+    public void setRelationship(Relationship relationship) {
+        if (this.relationships == null){
             ArrayList<Relationship> temp = new ArrayList<Relationship>();
             temp.add(relationship);
-            human.relationships = temp;
+            this.relationships = temp;
         }
         else{
-            human.relationships.add(relationship);
+            this.relationships.add(relationship);
         }
     }
 }

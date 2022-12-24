@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 
-public class SaveToDoc implements Saveable {
+public class SaveDoc implements ISave {
 
     private File file = new File("Humans.doc");
 
@@ -20,11 +20,9 @@ public class SaveToDoc implements Saveable {
         }
     }
 
-    public File getFile() {
-        return file;
+    public File getFile() {return file;
     }
 
-    public void setFile(File file) {
-        this.file = file;
+    public void setFile(File file) {this.file = file;
     }
 }

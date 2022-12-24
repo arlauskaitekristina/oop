@@ -1,7 +1,7 @@
 package view;
 import java.util.Scanner;
 
-public class UserInputFromConsole {
+public class Console {
 
     Scanner input = new Scanner(System.in);
 

@@ -2,16 +2,16 @@ package view;
 
 public class Menu {
 
-    private static UserInputFromConsole scan = new UserInputFromConsole();
+    private static Console scan = new Console();
     private static String userSelect = "EMPTY";
-    private static ToPresenter toPresenter = new ToPresenter();
+    private static MenuImplement menuI = new MenuImplement();
 
     public static void Start(){
 
         while (!userSelect.equals("9")){
             userSelect = "EMPTY";
-            userSelect = scan.inputKey(TextsMenu.Menu);
-            toPresenter.doSomething(userSelect);
+            userSelect = scan.inputKey(MenuText.Menu);
+            menuI.doSomething(userSelect);
         }
         scan.input.close();
         System.out.println("Всего доброго!");

@@ -1,6 +1,6 @@
 package view;
 
-public class TextsMenu {
+public class MenuText {
     protected static String Menu = " 1 - Посмотреть всех \n"+
             " 2 - Добавить человека  \n"+
             " 3 - Удалить человека по id \n"+

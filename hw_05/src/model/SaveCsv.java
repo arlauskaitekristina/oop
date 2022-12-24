@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class SaveToCsv implements Saveable {
+public class SaveCsv implements ISave {
 
     private File file = new File("Humans.csv");
 
@@ -19,11 +19,9 @@ public class SaveToCsv implements Saveable {
         }
     }
 
-    public File getFile() {
-        return file;
+    public File getFile() {return file;
     }
 
-    public void setFile(File file) {
-        this.file = file;
+    public void setFile(File file) {this.file = file;
     }
 }

@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 
-public class SaveToTxt implements Saveable {
+public class SaveTxt implements ISave {
 
     private String path = "Humans.txt";
 
@@ -19,11 +19,9 @@ public class SaveToTxt implements Saveable {
         }
     }
 
-    public String getPath() {
-        return path;
+    public String getPath() {return path;
     }
 
-    public void setPath(String path) {
-        this.path = path;
+    public void setPath(String path) {this.path = path;
     }
 }

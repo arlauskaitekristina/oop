@@ -1,7 +1,7 @@
 package view;
 
-public class PrintView {
-    public static void print(String str){
+public class PrintView implements IPrintView{
+    public void print(String str){
         System.out.print(str);
     }
 }
